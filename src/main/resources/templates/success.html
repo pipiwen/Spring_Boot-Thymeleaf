@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"><!--//导入thymeleaf命名空间-->
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>成功！！！</h1>
+<!--th:text将div文本内容设置为-->
+<div th:text="${hello}"></div>
+<hr/>
+<div th:text="${hw}"></div>
+<div th:utext="${hw}"></div>
+<hr/>
+<h3 th:text="${name}" th:each="name:${nameList}"></h3>
+<h3>
+<span th:each="n:${nameList}">[[${n}]]</span>
+</h3>
+</body>
+</html>
