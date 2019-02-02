@@ -15,7 +15,6 @@ public class LoginInterceptor implements HandlerInterceptor {
             response.sendRedirect("/index.html");
             return false;//阻止往后放行
         }
-        System.out.println("-------interceptor:---:"+UserUtil.getCurrentUser());
         return true;//放行给下一个拦截器
     }
 

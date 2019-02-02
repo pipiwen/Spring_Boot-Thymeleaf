@@ -1,6 +1,7 @@
 package com.syw.demo1.controller;
 
 import com.syw.demo1.entity.User;
+import com.syw.demo1.util.UserUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,6 +25,7 @@ public class HelloController {
     @PostMapping("login")
     public String login(User user, Map<String, Object>map){
         if(!StringUtils.isEmpty(user.getUsername())&&"123456".equals(user.getPassword())){
+            UserUtil.setCurrentUser(user);
             return "dashboard";
         }else {
             map.put("msg","用户名密码错误");
